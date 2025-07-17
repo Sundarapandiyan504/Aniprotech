@@ -14,13 +14,14 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #e2e8f0;
+            background: #1a202c;
             overflow-x: hidden;
         }
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: rgba(26, 32, 44, 0.95);
             color: white;
             padding: 1rem 0;
             position: fixed;
@@ -29,6 +30,7 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            border-bottom: 1px solid #2d3748;
         }
 
         nav {
@@ -43,10 +45,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: white;
         }
 
         .nav-links {
@@ -56,21 +55,23 @@
         }
 
         .nav-links a {
-            color: white;
+            color: #a0aec0;
             text-decoration: none;
             transition: all 0.3s ease;
             padding: 0.5rem 1rem;
             border-radius: 25px;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            background: rgba(139, 92, 246, 0.2);
             transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a202c;
             color: white;
             padding: 12rem 2rem 8rem;
             text-align: center;
@@ -85,7 +86,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(139,92,246,0.1)"/></svg>') repeat;
             animation: float 20s ease-in-out infinite;
         }
 
@@ -101,11 +102,58 @@
             z-index: 2;
         }
 
+        .success-badge {
+            display: inline-flex;
+            items-center: center;
+            background: #2d3748;
+            border: 1px solid #4a5568;
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.3s;
+        }
+
+        .success-dot {
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+
+        .success-text {
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .features-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.4s;
+        }
+
+        .features-badge span {
+            color: #a78bfa;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             opacity: 0;
             animation: slideUp 1s ease forwards 0.5s;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            color: #a78bfa;
         }
 
         .hero p {
@@ -113,27 +161,49 @@
             margin-bottom: 2rem;
             opacity: 0;
             animation: slideUp 1s ease forwards 0.7s;
+            color: #a0aec0;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 1s ease forwards 0.9s;
         }
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: #8b5cf6;
             color: white;
             padding: 1rem 2rem;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            opacity: 0;
-            animation: slideUp 1s ease forwards 0.9s;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
         }
 
         .cta-button:hover {
+            background: #7c3aed;
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #4a5568;
+            color: #a0aec0;
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: #2d3748;
+            border-color: #8b5cf6;
+            color: white;
         }
 
         @keyframes slideUp {
@@ -150,7 +220,7 @@
         /* Services Section */
         .services {
             padding: 8rem 2rem;
-            background: #f8fafc;
+            background: #1a202c;
         }
 
         .container {
@@ -162,13 +232,13 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #2d3748;
+            color: white;
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
-            color: #718096;
+            color: #a0aec0;
             margin-bottom: 4rem;
             max-width: 600px;
             margin-left: auto;
@@ -183,10 +253,10 @@
         }
 
         .service-card {
-            background: white;
+            background: #2d3748;
             padding: 3rem 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #4a5568;
             transition: all 0.3s ease;
             text-align: center;
             position: relative;
@@ -200,7 +270,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: #8b5cf6;
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -211,14 +281,15 @@
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
 
         .service-icon {
             width: 80px;
             height: 80px;
             margin: 0 auto 2rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: #8b5cf6;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -227,19 +298,14 @@
             color: white;
         }
 
-        .crm-icon { background: linear-gradient(135deg, #3b82f6, #1e40af); }
-        .hr-icon { background: linear-gradient(135deg, #10b981, #047857); }
-        .dev-icon { background: linear-gradient(135deg, #8b5cf6, #5b21b6); }
-        .care-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
-
         .service-card h3 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #2d3748;
+            color: white;
         }
 
         .service-card p {
-            color: #718096;
+            color: #a0aec0;
             margin-bottom: 2rem;
             line-height: 1.7;
         }
@@ -251,7 +317,7 @@
 
         .features-list li {
             padding: 0.5rem 0;
-            color: #4a5568;
+            color: #cbd5e0;
             position: relative;
             padding-left: 2rem;
         }
@@ -260,14 +326,14 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #10b981;
+            color: #8b5cf6;
             font-weight: bold;
         }
 
         /* About Section */
         .about {
             padding: 8rem 2rem;
-            background: white;
+            background: #2d3748;
         }
 
         .about-content {
@@ -280,11 +346,11 @@
         .about-text h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #2d3748;
+            color: white;
         }
 
         .about-text p {
-            color: #718096;
+            color: #a0aec0;
             margin-bottom: 1.5rem;
             line-height: 1.8;
         }
@@ -299,19 +365,20 @@
         .stat {
             text-align: center;
             padding: 2rem;
-            background: #f7fafc;
+            background: #1a202c;
             border-radius: 15px;
+            border: 1px solid #4a5568;
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #667eea;
+            color: #8b5cf6;
             display: block;
         }
 
         .stat-label {
-            color: #718096;
+            color: #a0aec0;
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -320,7 +387,7 @@
         /* Contact Section */
         .contact {
             padding: 8rem 2rem;
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            background: #1a202c;
             color: white;
         }
 
@@ -334,11 +401,12 @@
         .contact-info h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            color: white;
         }
 
         .contact-info p {
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #a0aec0;
             line-height: 1.7;
         }
 
@@ -350,7 +418,7 @@
             display: flex;
             align-items: center;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #4a5568;
         }
 
         .contact-details li:last-child {
@@ -361,14 +429,14 @@
             width: 20px;
             height: 20px;
             margin-right: 1rem;
-            color: #4ecdc4;
+            color: #8b5cf6;
         }
 
         .contact-form {
-            background: rgba(255, 255, 255, 0.05);
+            background: #2d3748;
             padding: 3rem;
             border-radius: 20px;
-            backdrop-filter: blur(10px);
+            border: 1px solid #4a5568;
         }
 
         .form-group {
@@ -385,9 +453,9 @@
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #4a5568;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            background: #1a202c;
             color: white;
             transition: all 0.3s ease;
         }
@@ -395,17 +463,17 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #4ecdc4;
-            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: #718096;
         }
 
         .submit-btn {
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            background: #8b5cf6;
             color: white;
             padding: 1rem 2rem;
             border: none;
@@ -418,16 +486,18 @@
         }
 
         .submit-btn:hover {
+            background: #7c3aed;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
         }
 
         /* Footer */
         footer {
-            background: #1a202c;
-            color: white;
+            background: #0d1117;
+            color: #a0aec0;
             text-align: center;
             padding: 2rem;
+            border-top: 1px solid #2d3748;
         }
 
         /* Responsive Design */
@@ -442,6 +512,11 @@
 
             .hero p {
                 font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
             .services-grid {
@@ -490,9 +565,15 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Transform Your Business with Aniprotech</h1>
+            <!-- Success Badge -->
+
+            <h1>Transform Your Business with <span class="highlight">Aniprotech</span></h1>
             <p>Comprehensive CRM, HR Management, Care Solutions, and Custom Software Development</p>
-            <a href="#contact" class="cta-button">Get Started Today</a>
+            
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button">Get Started Today</a>
+                <a href="#services" class="cta-button secondary">View Services</a>
+            </div>
         </div>
     </section>
 
@@ -503,9 +584,9 @@
             <p class="section-subtitle">We provide integrated solutions to streamline your business operations and drive growth</p>
             
             <div class="services-grid">
-                  <!-- Care Management Service -->
+                <!-- Care Management Service -->
                 <div class="service-card fade-in">
-                    <div class="service-icon care-icon">🏥</div>
+                    <div class="service-icon">🏥</div>
                     <h3>Aniprotech Care Management</h3>
                     <p>Revolutionary care management platform that connects families, caregivers, and healthcare providers. Streamline care coordination with real-time updates and comprehensive monitoring.</p>
                     <ul class="features-list">
@@ -520,7 +601,7 @@
                 
                 <!-- CRM Service -->
                 <div class="service-card fade-in">
-                    <div class="service-icon crm-icon">📊</div>
+                    <div class="service-icon">📊</div>
                     <h3>CRM Solutions</h3>
                     <p>Streamline your customer relationships with our powerful CRM platform. Track leads, manage contacts, and boost sales performance with intelligent automation.</p>
                     <ul class="features-list">
@@ -535,7 +616,7 @@
 
                 <!-- HR Service -->
                 <div class="service-card fade-in">
-                    <div class="service-icon hr-icon">👥</div>
+                    <div class="service-icon">👥</div>
                     <h3>HR Management</h3>
                     <p>Transform your HR processes with comprehensive tools for recruitment, payroll, performance management, and employee engagement in one unified platform.</p>
                     <ul class="features-list">
@@ -550,7 +631,7 @@
 
                 <!-- Software Development Service -->
                 <div class="service-card fade-in">
-                    <div class="service-icon dev-icon">💻</div>
+                    <div class="service-icon">💻</div>
                     <h3>Software Development</h3>
                     <p>Custom software solutions tailored to your unique business needs. From web applications to mobile apps, we build scalable, secure, and user-friendly solutions.</p>
                     <ul class="features-list">
@@ -689,9 +770,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(102, 126, 234, 0.95)';
+                header.style.background = 'rgba(26, 32, 44, 0.98)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                header.style.background = 'rgba(26, 32, 44, 0.95)';
             }
         });
 
